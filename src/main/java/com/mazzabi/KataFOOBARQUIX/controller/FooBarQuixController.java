@@ -17,7 +17,7 @@ public class FooBarQuixController {
     public FooBarQuixController(IFooBarQuixService fooBarQuixService) {
         this.fooBarQuixService = fooBarQuixService;
     }
-    
+
     @GetMapping("/transform/{number}")
     public ResponseEntity<String> transform(@PathVariable int number) {
         return (number < 0 || number > 100) ?

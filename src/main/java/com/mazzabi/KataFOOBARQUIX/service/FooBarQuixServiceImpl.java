@@ -10,6 +10,10 @@ import java.util.stream.Collectors;
 public class FooBarQuixServiceImpl implements IFooBarQuixService {
 
     public String transform(int number) {
+        return (number < 0 || number > 100) ? "NOT_HANDLED" : getFooBarQuix(number);
+    }
+
+    private static String getFooBarQuix(int number) {
         String numberStr = String.valueOf(number);
         String joinResult = getStringByDivisibleRule(number) + getStringByContainDigitRule(numberStr);
         return joinResult.isEmpty() ? numberStr : joinResult;
