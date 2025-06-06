@@ -1,0 +1,12 @@
+version: "3.8"
+
+services:
+  katafoobarquix-api:
+    build: .
+    container_name: katafoobarquix-api
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./input:/app/input
+      - ./output:/app/output
+    restart: unless-stopped
